@@ -1,6 +1,7 @@
 #pragma once
-
 #include "runtime/function/framework/component/component.h"
+#include "sol/sol.hpp"
+
 
 namespace Piccolo
 {
@@ -17,6 +18,7 @@ namespace Piccolo
         void tick(float delta_time) override;
 
     protected:
+        sol::state m_lua_state;
         META(Enable)
         std::string m_lua_script;
     };
